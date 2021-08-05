@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>{{err}}</h2>
+  <a href="{% url 'home-page' %}">back</a>
+  <br>
+<form method="post" action="">
+  {% csrf_token %}
+  {{form.as_p}}
+  <!-- date from <input type="date" name="date_from">
+  <br><br>
+  date to <input type="date" name="date_to">
+    <br><br>
+  no of adults<input type="number" name="adults" >
+    <br><br>
+    no of child <input type="number" name="child">
+    <br><br> -->
+    <input type="submit" value="book">
+</form>
+</body>
+</html>

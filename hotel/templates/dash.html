@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+
+
+
+    <h2>{{details.name}}</h2>
+
+    <h3>{{details.hotel_phone}}</h3>
+
+    <h4>{{details.hotel_address}}</h4>
+
+    <h4>{{details.star}}</h4>
+
+    <img src="{{details.hotel_image.url}}" height="70px" width="70px" alt="err">
+    <br>
+    <a href="{% url 'view-booking' %}">view bookings</a>
+    <br>
+    <a href="{% url 'add-room' %}">add room</a>
+    <br>
+    <a href="{% url 'move_to_history' %}">click here to move all completed booking to the history</a>
+    <br>
+    {% if rooms %}
+    {% for room in rooms %}
+    <img src="{{room.room_image.url}}" width="50px" height="50px" alt="cant load image">
+    <b>{{room.room_name}}</b> (adult occupancy :<b>{{room.occupancy_for_adult}}</b> ,price for adult
+    :<b>{{room.price_for_adult}}</b>)
+    ( occupancy for childs:<b>{{room.occupancy_for_child}}</b>,price for child :<b>{{room.price_for_child}}</b>)
+    <a href="{% url 'edit-room' room.id %}">edit room</a> &nbsp;<a href="{% url 'delete-room' room.id %}">delete
+        room</a>
+
+    <hr>
+    {% endfor %}
+    {% endif %}
+
+
+
+    <a href="{% url 'logout' %}">log out</a>
+
+</body>
+
+</html>

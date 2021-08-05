@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'add-hotel' %}">add hotel</a>
+<br>
+
+<a href="{% url 'logout' %}">log out</a>
+<br>
+<br>
+<h2>Active Hotels</h2>
+{% for hotel in active_hotels %}
+{{hotel.name}}({{hotel.star}} Star)  ({{hotel.room_count}} Rooms) ({{hotel.oc}} Occupancy)</b><a href="{% url 'edit-hotel' hotel.owner %}"> edit hotel</a> </b> <a href="{% url 'delete-hotel' hotel.owner %}">delete hotel</a>
+<a href="{% url 'view-hotel' hotel.owner %}">view </a>
+<br>
+
+
+{% endfor %}
+<h2>Pending Hotels</h2>
+{% for hotel in pending_hotels %}
+<b>{{hotel.name}} </b>({{hotel.star}}star)(NA)(NA)
+
+{% endfor %}
+
+</body>
+</html>

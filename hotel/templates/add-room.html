@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> add room </h2>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <!-- <input type="text" name="roomname" placeholder="room name" required>
+    <br><br>
+    <input type="number" name="adult_oc" placeholder="adult occupancy" required>
+    <br><br>
+    <input type="number" name="adult_pr" placeholder="price for adult" required>
+    <br><br>
+    <input type="number" name="child_oc" placeholder="child occupancy" >
+    <br><br>
+    <input type="number" name="child_pr" placeholder="price for adult" >
+    <br><br>
+    <span>room image</span>
+    <input type="file" name="room_image">
+    <br><br> -->
+    <input type="submit" value="add room">
+    <br>
+    <br>
+    <a href="{% url 'dash' %}">back</a>
+</form>
+</body>
+</html>

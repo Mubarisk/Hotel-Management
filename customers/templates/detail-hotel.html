@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'home-page' %}">back</a>
+<h3>{{hotel.name}}</h3>
+
+<h5>address: {{hotel.hotel_address}}</h5>
+
+<h5>phone: {{hotel.hotel_phone}}</h5>
+
+<h5>star: {{hotel.star}}</h5>
+<img src="{{hotel.hotel_image.url}}" height="60" width="60" alt="err">
+
+<h4><b><u>Rooms</u></b> </h4>
+{% for room in rooms %}
+<img src="{{room.room_image.url}}" width="50px" height="50px" alt="cant load image">
+<b>{{room.room_name}}</b> (adult occupancy :<b>{{room.occupancy_for_adult}}</b> ,price for adult :<b>{{room.price_for_adult}}</b>){% if room.price_for_child %}
+( occupancy for childs:<b>{{room.occupancy_for_child}}</b>,price for child :<b>{{room.price_for_child}}</b>){% endif %}<a href="{% url 'add-booking' room.id %}">add booking</a>
+
+<hr>
+{% endfor %}
+</body>
+</html>

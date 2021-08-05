@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="{% url 'home-page' %}">back</a>
+    <br><br><br>
+    <h3>your bookings request</h2>
+{% for booking in request %}
+booking id: {{booking.pk}}
+<br>
+hotel:{{booking.room.hotel.name}}
+<br>
+hotel address:{{booking.room.hotel.hotel_address}}
+<br>
+hotel phone :{{booking.room.hotel.hotel_phone}}
+<br>
+room :{{booking.room.room_name}}
+<br>
+date from :{{booking.date_from}}
+<br>
+date to :{{booking.date_to}}
+<br>
+total price:{{booking.total_price}}
+<br>
+status :{{booking.status}}
+<br>
+<a href="{% url 'edit-booking' booking.id %}">edit booking</a>
+<br>
+<a href="{% url 'delete-booking' booking.id %}">delete booking</a>
+<hr>
+{% endfor %}
+<h3>accepted bookings </h2>
+{% for booking in accepted %}
+booking id: {{booking.pk}}
+<br>
+hotel:{{booking.room.hotel.name}}
+<br>
+hotel address:{{booking.room.hotel.hotel_address}}
+<br>
+hotel phone :{{booking.room.hotel.hotel_phone}}
+<br>
+room :{{booking.room.room_name}}
+<br>
+date from :{{booking.date_from}}
+<br>
+date to :{{booking.date_to}}
+<br>
+total price:{{booking.total_price}}
+<br>
+status :{{booking.status}}
+<br>
+<a href="{% url 'edit-booking' booking.id %}">edit booking</a>
+<br>
+<a href="{% url 'delete-booking' booking.id %}">delete booking</a>
+
+<hr>
+{% endfor %}
+<h3>rejected bookings request</h2>
+{% for booking in rejected %}
+booking id: {{booking.pk}}
+<br>
+hotel:{{booking.room.hotel.name}}
+<br>
+hotel address:{{booking.room.hotel.hotel_address}}
+<br>
+hotel phone :{{booking.room.hotel.hotel_phone}}
+<br>
+room :{{booking.room.room_name}}
+<br>
+date from :{{booking.date_from}}
+<br>
+date to :{{booking.date_to}}
+<br>
+total price:{{booking.total_price}}
+<br>
+status :{{booking.status}}
+<br>
+
+<hr>
+{% endfor %}
+<h3> booking history</h2>
+{% for booking in history %}
+booking id: {{booking.pk}}
+<br>
+hotel:{{booking.room.hotel.name}}
+<br>
+hotel address:{{booking.room.hotel.hotel_address}}
+<br>
+hotel phone :{{booking.room.hotel.hotel_phone}}
+<br>
+room :{{booking.room.room_name}}
+<br>
+date from :{{booking.date_from}}
+<br>
+date to :{{booking.date_to}}
+<br>
+status :{{booking.status}}
+
+
+<hr>
+{% endfor %}
+</body>
+</html>

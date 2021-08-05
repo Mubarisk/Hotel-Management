@@ -1,0 +1,8 @@
+{% if err%}
+<h2>{{err}}</h2>{% endif %}
+<form method="POST" action="">
+    {% csrf_token %}
+    <input type="email" name="email" placeholder="email">
+    <br>
+    <input type="submit" value="check">
+</form>

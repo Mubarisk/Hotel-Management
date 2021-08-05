@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'admin-panel' %}">back</a>
+<br>
+<a href="{% url 'delete-hotel' details.owner.id %}">delete hotel</a>
+<br>
+<a href="{% url 'reset-password' details.pk %}">reset password</a>
+<br>
+<u><h3>Owner Details</h3></u>
+name:{{details.owner.fullname}}
+<br>email:{{details.owner.email}}
+<br>phone:{{details.owner.phone}}
+<br>address:{{details.owner.address}}
+
+<hr>
+<u><h3>hotel Details</h3></u>
+name:{{details.name}}
+<br>phone:{{details.hotel_phone}}
+<br>address:{{details.hotel_address}}
+<br>star:{{details.star}}
+<hr>
+{% if rooms %}
+<h3><u>Rooms</u></h3>
+{% for room in rooms %}
+room name:<b>{{room.room_name}}</b>
+(price for adults:<b>{{room.price_for_adult}}</b>
+occupancy for adults:<b>{{room.occupancy_for_adult}}</b>)
+{% if room.occupancy_for_child %}
+(price for child:<b>{{room.price_for_child}}</b>
+occupancy for child:<b>{{room.occupancy_for_child}}</b>)
+{% endif %}
+
+
+<br><br>
+<br>
+{% endfor %}
+
+{% endif %}
+
+<br>
+
+<br>
+<h3>TODAY BOOKING:{{booking_today}}</h3>
+<h3>TOTAL BOOKING:{{total_booking}}</h3>
+ 
+</body>
+</html>

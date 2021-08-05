@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>{{err}}</h2>
+    <form action="" method="POST">
+
+
+        {% csrf_token %}
+        {{form.as_p}}
+        <!-- date from <input type="date" value="{{booking.date_from}}" name="date_from">
+        <br><br>
+        date to <input type="date" value="{{booking.date_to}}" name="date_to">
+        <br><br>
+        no of adults<input type="number" value="{{booking.number_of_adult}}" name="adults">
+        <br><br>
+        no of child <input type="number" value="{{booking.number_of_child}}" name="child">
+        <br><br>{{booking.room.id}}
+        <input type="hidden" value="" name="booking_id"> -->
+        <input type="submit" value="edit-booking">
+    </form>
+</body>
+
+</html>

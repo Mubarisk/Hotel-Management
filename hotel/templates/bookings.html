@@ -1,0 +1,79 @@
+<a href="{% url 'dash' %}">back</a>
+<br>
+<br> <u><h3>booking request</h3></u>
+{% for booking in pending_request %}
+room :<b>{{booking.room.room_name}}</b>
+<br>
+booking id:<b>{{booking.id}}</b>
+<br>
+date from :<b>{{booking.date_from}}</b>
+<br>
+date to:<b>{{booking.date_to}}</b>
+<br>
+adults:<b>{{booking.number_of_adult}}</b>
+<br>
+child:<b>{{booking.number_of_child}}</b>
+<br>
+total price:{{booking.total_price}}
+<br>
+<a href="{% url 'accept_request' booking.pk %}">accept request</a>
+<br><a href="{% url 'reject_request' booking.pk %}">reject request</a>
+<br>
+<br><br>
+{% endfor %}
+<u><h3>accepted request</h3></u>
+{% for booking in accepted %}
+room :<b>{{booking.room.room_name}}</b>
+<br>
+booking id:<b>{{booking.id}}</b>
+<br>
+date from :<b>{{booking.date_from}}</b>
+<br>
+date to:<b>{{booking.date_to}}</b>
+<br>
+adults:<b>{{booking.number_of_adult}}</b>
+<br>
+child:<b>{{booking.number_of_child}}</b>
+<br>
+total price:{{booking.total_price}}
+<br>
+
+<br>
+<br><br>
+{% endfor %}
+<u><h3>rejected request</h3></u>
+{% for booking in rejected %}
+room :<b>{{booking.room.room_name}}</b>
+<br>
+booking id:<b>{{booking.id}}</b>
+<br>
+date from :<b>{{booking.date_from}}</b>
+<br>
+date to:<b>{{booking.date_to}}</b>
+<br>
+adults:<b>{{booking.number_of_adult}}</b>
+<br>
+child:<b>{{booking.number_of_child}}</b>
+<br>
+
+<br>
+<br><br>
+{% endfor %}
+<u><h3>completed request</h3></u>
+{% for booking in history %}
+room :<b>{{booking.room.room_name}}</b>
+<br>
+booking id:<b>{{booking.id}}</b>
+<br>
+date from :<b>{{booking.date_from}}</b>
+<br>
+date to:<b>{{booking.date_to}}</b>
+<br>
+adults:<b>{{booking.number_of_adult}}</b>
+<br>
+child:<b>{{booking.number_of_child}}</b>
+<br>
+
+<br>
+<br><br>
+{% endfor %}

@@ -1,0 +1,24 @@
+<a href="{% url 'logout' %}">logout</a>
+<h3>welcome {{user.username}}</h3>
+<a href="{% url 'booking'  %}">your booking</a>
+<form action="{% url 'search' %}" method="GET" >
+<center><input type='text' name='key' placeholder="enter hotel name"><input type="submit" value='search'></center>
+</form>
+<hr>
+{% if err %}
+<h2>{{err}}</h2>
+{% endif %}
+{% for hotel in active_hotels %}
+<h3>{{hotel.name}}</h3>
+ min:{{hotel.min_price}}
+<h5>address: {{hotel.hotel_address}}</h5>
+<h5>phone: {{hotel.hotel_phone}}</h5>
+<h5>star: {{hotel.star}}</h5>
+<a href="{% url 'detailed' hotel.owner %}">view hotel</a>
+<hr>
+{% endfor %}
+{% for hotel in pending_hotels %}
+<h3>{{hotel.name}}</h3>
+<h4>NA</h4>
+<hr>
+{% endfor %}

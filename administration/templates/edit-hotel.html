@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>hotel details</h2>
+    {{hotel_form.as_p}}
+    <!-- <input type="text" name="name" placeholder="hotel name" value={{hotel.name}} required>
+  <br>
+  <br>
+  <input type="text" name="hotel_address" placeholder="address" value={{hotel.hotel_address}} required>
+  <br>
+  <br>
+  <input type="number" name="hotel_phone" placeholder="phone" value={{hotel.hotel_phone}} required>
+  <br>
+  <br>
+  <input type="number" name="star" placeholder="star rating" value={{hotel.star}} required>
+  <br>
+  <img src="{{hotel.hotel_image.url}}" height="50px" width="50px">
+  <br>
+  <input type="file" name="hotel_image" required> -->
+
+    <h2>owner details</h2>
+    {{user_form.as_p}}
+    <!-- <input type="email" name="email" placeholder="email" value={{owner.email}} required>
+    <br><br>
+    <input type="text" name="username" placeholder="username" value={{owner.username}} required>
+    <br><br>
+    <input type="text" name="fullname" placeholder="full name" value={{owner.fullname}} required>
+    <br><br>
+    <input type="number" name="owner_phone" placeholder="phone" value={{owner.phone}} required>
+    <br><br>
+    <input type="text" name="owner_address" placeholder="address" value={{owner.address}} required>
+    <br>
+   <img src="{{owner.image.url}}" height="50px" width="50px"><br>
+    <input type="file" name="owner_image" required>
+    <br><br>
+  
+    <br><br> -->
+    <input type="submit" value="edit owner" >
+</form>
+<br>
+<br><br>
+<a href="{% url 'admin-panel' %}">back</a>
+</body>
+</html>
+</body>
+</html>
